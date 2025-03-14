@@ -14,7 +14,6 @@ This Python script automates the process of extracting employee task data from a
 *   use this script to download my requirement:
 *   **Install Dependencies**:
     ```bash
-    pip install selenium pandas reportlab
     pip install -r requirements.txt
 
     ```
