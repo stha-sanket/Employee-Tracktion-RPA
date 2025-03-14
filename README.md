@@ -11,7 +11,13 @@ This Python script automates the process of extracting employee task data from a
 *   **Pandas**: Install using `pip install pandas`.
 *   **ReportLab**: Install using `pip install reportlab`.
 *   **Local HTML page**:  A locally served HTML file (`index.html`) containing the employee task data in a table format. The script is specifically designed to work with a specific HTML structure; modifications might be needed for different structures.
+*   use this script to download my requirement:
+*   **Install Dependencies**:
+    ```bash
+    pip install selenium pandas reportlab
+    pip install -r requirements.txt
 
+    ```
 ## Setup and Installation
 
 1.  **Install Dependencies**:
