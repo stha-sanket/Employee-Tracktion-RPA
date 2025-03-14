@@ -8,7 +8,6 @@ This Python script automates the process of extracting employee task data from a
 
 *   **Python 3.6+**: Ensure you have Python installed.
 *   **Selenium**: Install using `pip install selenium`.
-*   **ChromeDriver**:  Download the appropriate ChromeDriver version for your Chrome browser and place it in a location accessible to your system's PATH or specify the path in the script.
 *   **Pandas**: Install using `pip install pandas`.
 *   **ReportLab**: Install using `pip install reportlab`.
 *   **Local HTML page**:  A locally served HTML file (`index.html`) containing the employee task data in a table format. The script is specifically designed to work with a specific HTML structure; modifications might be needed for different structures.
