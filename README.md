@@ -62,9 +62,9 @@ The script generates the following output files:
 *   `employee_report.pdf`: A PDF document summarizing employee tasks, leave, underwork, overtime, and salary calculations.
 
 ## Outpur for Contact form
-- use F12 in your keyboard or use inspect to open developer tools
-- expand or lookout for application tab there
-- after that look for local storage, here you can see the data stored in the contact page
+- use `F12` in your keyboard or use `inspect` to open `developer tools`
+- expand or lookout for `application tab` there
+- after that look for `local storage`, here you can see the `data stored` in the contact page
   
 ## Code Explanation
 
