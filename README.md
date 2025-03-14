@@ -2,7 +2,7 @@
 
 ## Description
 
-This Python script automates the process of extracting employee task data from a local HTML page, analyzing the data for leave, overtime (hours > 8), and undertime (hours < 8), generating CSV reports for each category, and finally creating a PDF report with salary calculations based on the extracted data. It also includes functionality to automatically fill and submit a contact form on the website with summaries of leave, overtime, and undertime.
+This Python script automates the process of extracting employee task data from a local HTML page, analyzing the data for leave, overtime (hours > 8), and undertime (hours < 8), generating CSV reports, and finally creating a PDF report with salary calculations based on the extracted data. It also includes functionality to automatically fill and submit a contact form on the website with summaries of leave, overtime, and undertime.
 
 ## Prerequisites
 
@@ -20,18 +20,14 @@ This Python script automates the process of extracting employee task data from a
     pip install selenium pandas reportlab
     ```
 
-2.  **ChromeDriver**:
-    *   Download the ChromeDriver executable from [https://chromedriver.chromium.org/downloads](https://chromedriver.chromium.org/downloads) that matches your Chrome browser version.
-    *   Place the `chromedriver` executable in a directory included in your system's PATH (e.g., `/usr/local/bin` on Linux/macOS) or explicitly specify the path to the executable when initializing the `webdriver.Chrome()` object.
-
-3.  **HTML File**:
-    *   Ensure you have the `index.html` file with the employee data table.  The script assumes this file is located at `http://127.0.0.1:5500/HTML/index.html`.  Adjust the URL if your file is served at a different address. The HTML structure is assumed to be as follows:
+2.  **HTML File**:
+    *   Ensure you have the `index.html` file with the employee data table.  The script assumes this file is located at `http://127.0.0.1:5500/HTML/index.html`.  Adjust the URL if your file is served at a different address, do this by hosting a live server in VS-code for index.html then copying it and pasting in the main code. The HTML structure is assumed to be as follows:
     *   A navigation menu with links to "Employee" and "Contact".
     *   An employee tasks section with the id "employee-tasks" containing a table.
     *   The table has a header row (`<tr>` with `<th>`) and subsequent data rows (`<tr>` with `<td>`).
     *   The table columns are assumed to be in the following order: Date, Task Listings, Time IN, Time OUT, Hours, Task Assigned.
 
-4.  **Directory Structure:**
+3.  **Directory Structure:**
     Ensure you have a directory named `HTML` with `index.html` inside it if you're using the default URL.  Adjust the script if your HTML file is in a different location.
 
 ## Usage
@@ -43,7 +39,7 @@ This Python script automates the process of extracting employee task data from a
 2.  **Run the script**:
 
     ```bash
-    python your_script_name.py
+    python real.py # or your script name based on what you want to change the name of the python file
     ```
 
 3.  **Review Output**:
@@ -53,7 +49,7 @@ This Python script automates the process of extracting employee task data from a
         *   Extract employee task data from the table.
         *   Identify leave tasks, tasks with less than 8 hours (excluding 0 hours on Saturdays), and tasks with more than 8 hours.
         *   Print identified tasks to the console.
-        *   Create CSV files: `employee_report.csv`, `leave_report.csv` (if leave tasks are found), `less_than_8_hours_report.csv` (if tasks with less than 8 hours are found), and `more_than_8_hours_report.csv` (if tasks with more than 8 hours are found).
+        *   Create CSV files: `employee_report.csv`, `leave_report.csv` (if leave tasks are found).
         *   Generate a PDF report: `employee_report.pdf` including a salary summary (with leave deductions, overtime pay, and underwork deductions). The `employee_report.pdf` file includes employee information and salary summary.
         *   Fill and submit the contact form with summary information about leave, overtime, and underwork on the website
         *   Close the browser.
@@ -64,8 +60,6 @@ The script generates the following output files:
 
 *   `employee_report.csv`: Contains all the extracted employee task data.
 *   `leave_report.csv`: Contains only the rows where the task listing contains "leave".
-*   `less_than_8_hours_report.csv`: Contains rows where the hours are less than 8, excluding entries where the hours is 0 on Saturday.
-*   `more_than_8_hours_report.csv`: Contains rows where the hours are more than 8.
 *   `employee_report.pdf`: A PDF document summarizing employee tasks, leave, underwork, overtime, and salary calculations.
 
 ## Code Explanation
